@@ -11,5 +11,16 @@
     <h3>Long lived receiver</h3>
     <p>Printer </p>
     <p>Here's where content script will be injectedd </p>
+    <button id="emiter"> emit event</button>
+    <script>
+        var btn  = document.querySelector("#emiter");
+        btn.onclick = function(){
+            console.log('clicked -- ')
+            window.postMessage("messsage",(re)=>{
+                console.log('recieved --main ',re)
+            });
+        }
+    </script>
 </body>
+
 </html>

@@ -12,4 +12,7 @@ chrome.runtime.onConnect.addListener(function(port) {
       else if (msg.answer === "Madame... Bovary")
         port.postMessage({question: "I don't get it."});
     });
+    port.onDisconnect.addListener(function(port) {
+      console.log('port was disconnected ',port)
+    })
   });
