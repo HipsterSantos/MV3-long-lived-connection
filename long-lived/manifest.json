@@ -1,0 +1,28 @@
+{
+    "name":"RlongReceiver",
+    "version":"0.1",
+    "author":"santos",
+    "manifest_version":3,
+    "action":{
+        "default_popup":"index.html",
+        "default_icon":"icon.png",
+        "default_title":"Long lived connection",
+        "default_badge":"1"
+    },
+    
+    "permissions":[
+        "tabs",
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "background":{
+        "service_worker": "background.js"        
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["contentScript.js"]
+        }
+    ]
+}
